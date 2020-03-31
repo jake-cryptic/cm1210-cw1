@@ -1,3 +1,10 @@
+/*
+ *	Module: CM1210 CW1
+ *	Question: 1a
+ *	Name: Jake Mcneill
+ *	Student Number: c1931370
+ */
+
 public class Square {
 
 	private int[][] data;
@@ -9,8 +16,6 @@ public class Square {
 	}
 
 	public void printData() {
-		// System.out.println ("Square size: " + data.length);
-
 		for (int[] row : data) {
 			System.out.print("\n\t|\t");
 
@@ -20,7 +25,7 @@ public class Square {
 		}
 	}
 
-	private int getRelative(int n){
+	private int getRelative(int n) {
 		int rn = n - 1;
 		if (rn < 0) {
 			rn = size - 1;
@@ -30,20 +35,19 @@ public class Square {
 		return rn;
 	}
 
-	public int updatePos(int n){
+	public int updatePos(int n) {
 		return getRelative(n) + 1;
 	}
 
 	public int getPos(int x, int y) {
-		int nx = getRelative(x), ny = getRelative(y);
-		System.out.println("\nGetting " + nx + "," + ny);
-
+		int nx = getRelative(x),
+			ny = getRelative(y);
 		return data[nx][ny];
 	}
 
 	public void setPos(int x, int y, int newValue) {
-		int nx = getRelative(x), ny = getRelative(y);
-		System.out.println("\nSetting " + nx + "," + ny + " to: " + newValue);
+		int nx = getRelative(x),
+			ny = getRelative(y);
 		data[nx][ny] = newValue;
 	}
 

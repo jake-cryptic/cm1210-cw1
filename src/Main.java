@@ -1,10 +1,16 @@
+/*
+ *	Module: CM1210 CW1
+ *	Question: 1a
+ *	Name: Jake Mcneill
+ *	Student Number: c1931370
+*/
+
 public class Main {
 
 	public static void main(String[] args) {
 		int userSquareSize = getSquareSize();
 
 		Square magic = new Square(userSquareSize);
-		magic.printData();
 
 		int max 	= (int) Math.pow(userSquareSize, 2),
 		 	loopX 	= 1,
@@ -13,8 +19,6 @@ public class Main {
 		magic.setPos(loopX, loopY, 1);
 
 		for (int i = 2; i <= max; i++) {
-			// magic.printData();
-			
 			if (magic.getPos(loopX - 1, loopY - 1) == 0) {
 				loopX--;
 				loopY--;
@@ -27,22 +31,24 @@ public class Main {
 			loopY = magic.updatePos(loopY);
 		}
 
+		System.out.println("Here's that magic square you wanted: ");
 		magic.printData();
+		System.out.println();
 	}
 
 	private static int getSquareSize(){
 		Input in = new Input();
 
 		int squareSize;
-		boolean isOdd;
+		boolean isAllowed;
 
 		do {
 			squareSize = in.getInt("Please enter an odd integer");
-			isOdd = isOddNumber(squareSize);
-			if (!isOdd){
-				System.out.println("You have entered an even number!");
+			isAllowed = isOddNumber(squareSize) && 0 < squareSize;
+			if (!isAllowed){
+				System.out.println("You have entered an invalid number. The number must be greater than 0 and odd.");
 			}
-		} while (!isOdd);
+		} while (!isAllowed);
 
 		return squareSize;
 	}
