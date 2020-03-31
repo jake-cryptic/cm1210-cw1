@@ -32,9 +32,7 @@ public class Main {
 			loopY = magic.updatePos(loopY);
 		}
 
-		System.out.println("Here's that magic square you wanted: ");
-		magic.printData();
-		System.out.println();
+		System.out.println("Here's that magic square you wanted: \n" + magic.toString());
 	}
 
 	private static int getSquareSize(){

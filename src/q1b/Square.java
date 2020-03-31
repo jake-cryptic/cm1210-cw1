@@ -16,14 +16,18 @@ public class Square {
 		data = new int[size][size];
 	}
 
-	public void printData() {
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+
 		for (int[] row : data) {
-			System.out.print("\n\t/\t");
+			sb.append("\n\t/\t");
 
 			for (int item : row) {
-				System.out.print(item + "\t/\t");
+				sb.append(item + "\t/\t");
 			}
 		}
+
+		return sb.toString();
 	}
 
 	private int getRelative(int n) {

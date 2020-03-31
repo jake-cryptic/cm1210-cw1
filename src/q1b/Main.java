@@ -13,9 +13,7 @@ public class Main {
 
 		Magic square = new Magic(userSquareSize);
 
-		System.out.println("Here's that magic square you wanted: ");
-		square.printData();
-		System.out.println();
+		System.out.println("Here's that magic square you wanted: \n" + square.toString());
 	}
 
 	private static int getSquareSize(){
