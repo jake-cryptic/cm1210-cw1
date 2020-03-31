@@ -4,6 +4,28 @@ public class Main {
 		int userSquareSize = getSquareSize();
 
 		Square magic = new Square(userSquareSize);
+		magic.printData();
+
+		int max 	= (int) Math.pow(userSquareSize, 2),
+		 	loopX 	= 1,
+			loopY	= ((userSquareSize + 1) / 2);
+
+		magic.setPos(loopX, loopY, 1);
+
+		for (int i = 2; i <= max; i++) {
+			// magic.printData();
+			
+			if (magic.getPos(loopX - 1, loopY - 1) == 0) {
+				loopX--;
+				loopY--;
+			} else {
+				loopX++;
+			}
+
+			magic.setPos(loopX, loopY, i);
+			loopX = magic.updatePos(loopX);
+			loopY = magic.updatePos(loopY);
+		}
 
 		magic.printData();
 	}
