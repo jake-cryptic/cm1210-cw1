@@ -3,7 +3,7 @@
  *	Question: 1b
  *	Name: Jake Mcneill
  *	Student Number: c1931370
-*/
+ */
 package q1b;
 
 public class Main {
@@ -11,29 +11,10 @@ public class Main {
 	public static void main(String[] args) {
 		int userSquareSize = getSquareSize();
 
-		Square magic = new Square(userSquareSize);
-
-		int max 	= (int) Math.pow(userSquareSize, 2),
-		 	loopX 	= 1,
-			loopY	= ((userSquareSize + 1) / 2);
-
-		magic.setPos(loopX, loopY, 1);
-
-		for (int i = 2; i <= max; i++) {
-			if (magic.getPos(loopX - 1, loopY - 1) == 0) {
-				loopX--;
-				loopY--;
-			} else {
-				loopX++;
-			}
-
-			magic.setPos(loopX, loopY, i);
-			loopX = magic.updatePos(loopX);
-			loopY = magic.updatePos(loopY);
-		}
+		Magic square = new Magic(userSquareSize);
 
 		System.out.println("Here's that magic square you wanted: ");
-		magic.printData();
+		square.printData();
 		System.out.println();
 	}
 

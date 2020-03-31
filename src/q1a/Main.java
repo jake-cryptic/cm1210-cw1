@@ -3,7 +3,7 @@
  *	Question: 1a
  *	Name: Jake Mcneill
  *	Student Number: c1931370
-*/
+ */
 package q1a;
 
 public class Main {
@@ -14,8 +14,8 @@ public class Main {
 		Square magic = new Square(userSquareSize);
 
 		int max 	= (int) Math.pow(userSquareSize, 2),
-		 	loopX 	= 1,
-			loopY	= ((userSquareSize + 1) / 2);
+				loopX 	= 1,
+				loopY	= ((userSquareSize + 1) / 2);
 
 		magic.setPos(loopX, loopY, 1);
 

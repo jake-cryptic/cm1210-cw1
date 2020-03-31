@@ -18,10 +18,10 @@ public class Square {
 
 	public void printData() {
 		for (int[] row : data) {
-			System.out.print("\n\t|\t");
+			System.out.print("\n\t/\t");
 
 			for (int item : row) {
-				System.out.print(item + "\t|\t");
+				System.out.print(item + "\t/\t");
 			}
 		}
 	}
