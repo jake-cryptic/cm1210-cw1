@@ -3,25 +3,16 @@ public class Main {
 	public static void main(String[] args) {
 		int userSquareSize = getSquareSize();
 
-		int square[][] = new int[userSquareSize][userSquareSize];
-		printSquareData(square);
-	}
+		Square magic = new Square(userSquareSize);
 
-	private static void printSquareData(int[][] square) {
-		System.out.println ("Square size: " + square.length);
-		for (int[] ints : square) {
-			System.out.print("\n | ");
-			for (int anInt : ints) {
-				System.out.print(anInt + " | ");
-			}
-		}
+		magic.printData();
 	}
 
 	private static int getSquareSize(){
 		Input in = new Input();
 
-		int squareSize = 2;
-		boolean isOdd = false;
+		int squareSize;
+		boolean isOdd;
 
 		do {
 			squareSize = in.getInt("Please enter an odd integer");
