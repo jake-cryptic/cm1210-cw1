@@ -1,9 +1,10 @@
 /*
  *	Module: CM1210 CW1
- *	Question: 1a
+ *	Question: 1b
  *	Name: Jake Mcneill
  *	Student Number: c1931370
  */
+package q1b;
 
 public class Square {
 
