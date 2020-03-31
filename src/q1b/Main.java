@@ -13,7 +13,20 @@ public class Main {
 
 		Magic square = new Magic(userSquareSize);
 
-		System.out.println("Here's that magic square you wanted: \n" + square.toString());
+		String originalSquare = square.toString();
+		System.out.println("Here's the unshuffled square: \n" + originalSquare);
+
+		square.shuffle();
+
+		String shuffledSquare = square.toString();
+		System.out.println("Here's the shuffled square: \n" + shuffledSquare);
+
+		// Shuffle square
+
+
+		// While user square string != originalSquare, keep playing
+		int numMoves = 0;
+
 	}
 
 	private static int getSquareSize(){

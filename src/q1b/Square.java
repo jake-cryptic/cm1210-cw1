@@ -8,7 +8,7 @@ package q1b;
 
 public class Square {
 
-	private int[][] data;
+	protected int[][] data;
 	private int size;
 
 	public Square(int usize){

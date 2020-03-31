@@ -40,4 +40,24 @@ public class Input {
 		return uin;
 	}
 
+	public String getInput(String out){
+		prompt(out);
+
+		String uin = null;
+		try {
+			if (sc.hasNext()) {
+				uin = sc.next();
+			} else {
+				System.out.println("That was not valid input.");
+				sc.next();
+				uin = getInput(out);
+			}
+		} catch(Exception e) {
+			System.out.println(e.toString());
+			System.exit(0);
+		}
+
+		return uin;
+	}
+
 }
