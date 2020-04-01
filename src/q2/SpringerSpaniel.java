@@ -6,9 +6,8 @@
  */
 package q2;
 
-public abstract class Pet {
-
-	protected String name;
-	protected int bird;
+class SpringerSpaniel extends Dog {
+	
+	
 
 }
