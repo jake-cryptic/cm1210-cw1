@@ -31,7 +31,9 @@ public class Main {
 		System.out.println("Here's the shuffled square: \n" + shuffledSquare);
 
 		// Print instructions
-		System.out.println("\nPlease enter an input that has the format: x y direction");
+		System.out.println("\nPlease enter an input that has the format: i j direction");
+		System.out.println("i refers to the row, j refers to the column.");
+		System.out.println("For instance i = 1, j = 1 is the first row and first column");
 		System.out.println("Valid directions include: U, D, L, R\n");
 
 		int numMoves = 0;
@@ -42,12 +44,12 @@ public class Main {
 			String[] components = move.split("\\s+", 3);
 
 			if (components.length != 3) {
-				System.out.println("Please enter an input that has the format: x y direction");
+				System.out.println("Please enter an input that has the format: i j direction");
 				continue;
 			}
 
-			int x = Integer.parseInt(components[0]);
-			int y = Integer.parseInt(components[1]);
+			int i = Integer.parseInt(components[0]);
+			int j = Integer.parseInt(components[1]);
 			String dir = components[2].toUpperCase();
 
 			if (!validMovesList.contains(dir)) {
@@ -55,7 +57,7 @@ public class Main {
 				continue;
 			}
 
-			square.swap(x, y, dir);
+			square.swap(i, j, dir);
 
 			numMoves++;
 

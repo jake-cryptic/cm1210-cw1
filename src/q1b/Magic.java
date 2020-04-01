@@ -33,28 +33,28 @@ public class Magic extends Square {
 		}
 	}
 
-	public void swap(int x, int y, String dir) {
-		int newX = updatePos(x),
-			newY = updatePos(y);
+	public void swap(int i, int j, String dir) {
+		int newI = updatePos(i),
+			newJ = updatePos(j);
 
 		// Adjust coordinates depending on direction
 		switch (dir){
-			case "U": newY++; break;
-			case "D": newY--; break;
-			case "L": newX--; break;
-			case "R": newX++; break;
+			case "U": newI++; break;
+			case "D": newI--; break;
+			case "L": newJ--; break;
+			case "R": newJ++; break;
 		}
 
-		newX = updatePos(newX);
-		newY = updatePos(newY);
+		newI = updatePos(newI);
+		newJ = updatePos(newJ);
 
 		// Get data from old positions
-		int tmpOld = getPos(x, y);
-		int tmpNew = getPos(newX, newY);
+		int tmpOld = getPos(i, j);
+		int tmpNew = getPos(newI, newJ);
 
 		// Set data for new positions
-		setPos(newX, newY, tmpOld);
-		setPos(x, y, tmpNew);
+		setPos(newI, newJ, tmpOld);
+		setPos(i, j, tmpNew);
 	}
 
 	public void shuffle() {
