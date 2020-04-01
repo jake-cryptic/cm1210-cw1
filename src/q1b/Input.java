@@ -40,17 +40,17 @@ public class Input {
 		return uin;
 	}
 
-	public String getInput(String out){
+	public String getMove(String out){
 		prompt(out);
 
 		String uin = null;
 		try {
-			if (sc.hasNext()) {
-				uin = sc.next();
+			if (sc.hasNextLine()) {
+				uin = sc.nextLine();
 			} else {
 				System.out.println("That was not valid input.");
-				sc.next();
-				uin = getInput(out);
+				sc.nextLine();
+				uin = getMove(out);
 			}
 		} catch(Exception e) {
 			System.out.println(e.toString());

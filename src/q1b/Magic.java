@@ -34,8 +34,8 @@ public class Magic extends Square {
 	}
 
 	public void swap(int x, int y, String dir) {
-		int newX = x,
-			newY = y;
+		int newX = updatePos(x),
+			newY = updatePos(y);
 
 		// Adjust coordinates depending on direction
 		switch (dir){
@@ -44,6 +44,9 @@ public class Magic extends Square {
 			case "L": newX--; break;
 			case "R": newX++; break;
 		}
+
+		newX = updatePos(newX);
+		newY = updatePos(newY);
 
 		// Get data from old positions
 		int tmpOld = getPos(x, y);

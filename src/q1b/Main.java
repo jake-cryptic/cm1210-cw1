@@ -30,13 +30,16 @@ public class Main {
 		String shuffledSquare = square.toString();
 		System.out.println("Here's the shuffled square: \n" + shuffledSquare);
 
-		// While user square string != originalSquare, keep playing
-		int numMoves = 0;
-		while (!square.toString().equals(originalSquare)){
-			String move = in.getInput("Enter a move");
-			String[] components = move.split(" ");
+		// Print instructions
+		System.out.println("\nPlease enter an input that has the format: x y direction");
+		System.out.println("Valid directions include: U, D, L, R\n");
 
-			System.out.println(components.length);
+		int numMoves = 0;
+
+		// While user square string != originalSquare, keep playing
+		while (!square.toString().equals(originalSquare)){
+			String move = in.getMove("Enter a move");
+			String[] components = move.split("\\s+", 3);
 
 			if (components.length != 3) {
 				System.out.println("Please enter an input that has the format: x y direction");
@@ -55,7 +58,16 @@ public class Main {
 			square.swap(x, y, dir);
 
 			numMoves++;
+
+			System.out.println("\nYou just made move number " + numMoves + ".");
+			System.out.println("Here was the square before: \n" + shuffledSquare);
+			System.out.println("Here's the current square: \n" + square.toString());
+			System.out.println("You are attempting to get it to look like: \n" + originalSquare);
+
+			shuffledSquare = square.toString();
 		}
+
+		System.out.println("You finished in " + numMoves + " moves!");
 	}
 
 	private static int getSquareSize(Input in){
