@@ -6,8 +6,12 @@
  */
 package q2;
 
-class Tetra extends Fish {
-	
-	
+import java.util.Date;
+
+public class Tetra extends Fish {
+
+	public Tetra(String name, Date birthday) {
+		super(name, birthday);
+	}
 
 }

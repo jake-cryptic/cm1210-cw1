@@ -6,8 +6,14 @@
  */
 package q2;
 
+import java.util.Date;
+
 public class Fish extends Pet {
 
+	private float length;
+	private String species;
 
-
+	public Fish(String name, Date birthday) {
+		super(name, birthday);
+	}
 }

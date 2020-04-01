@@ -6,8 +6,15 @@
  */
 package q2;
 
+import java.util.Date;
+
 public class Dog extends Pet {
 
-	protected String breed;
+	private String breed;
+	private String gender;
+
+	public Dog(String name, Date birthday) {
+		super(name, birthday);
+	}
 
 }

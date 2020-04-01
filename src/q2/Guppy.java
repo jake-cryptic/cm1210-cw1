@@ -6,8 +6,12 @@
  */
 package q2;
 
-class Guppy extends Fish {
-	
-	
+import java.util.Date;
+
+public class Guppy extends Fish {
+
+	public Guppy(String name, Date birthday) {
+		super(name, birthday);
+	}
 
 }

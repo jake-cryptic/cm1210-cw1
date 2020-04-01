@@ -6,9 +6,41 @@
  */
 package q2;
 
+import java.util.Date;
+
 public abstract class Pet {
 
-	protected String name;
-	protected int bird;
+	private String name;
+	private Date birthday;
+	private float weight;
+
+	public Pet(String name, Date birthday) {
+		this.name = name;
+		this.birthday = birthday;
+	}
+
+	public String toString() {
+		return "Pet:" + name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public float getWeight() {
+		return weight;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setWeight(float weight) {
+		this.weight = weight;
+	}
 
 }

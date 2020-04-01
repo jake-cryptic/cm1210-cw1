@@ -6,8 +6,12 @@
  */
 package q2;
 
-class SpringerSpaniel extends Dog {
-	
-	
+import java.util.Date;
+
+public class SpringerSpaniel extends Dog {
+
+	public SpringerSpaniel(String name, Date birthday) {
+		super(name, birthday);
+	}
 
 }
