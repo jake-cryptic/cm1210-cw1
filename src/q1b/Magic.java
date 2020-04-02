@@ -33,6 +33,49 @@ public class Magic extends Square {
 		}
 	}
 
+	public int getAnswer() {
+		int ans = size * ((size * size) + 1);
+		return ans / 2;
+	}
+
+	public boolean validSquare() {
+		int answer = getAnswer();
+
+		int[] columnSum = new int[size];
+		int diagonalSum = 0;
+
+		for (int i = 0; i < size; i++) {
+			int rowSum = 0;
+
+			for (int j = 0; j < size; j++) {
+				rowSum += data[i][j];
+				columnSum[j] += data[j][i];
+				if (i == j) {
+					diagonalSum += data[i][j];
+				}
+			}
+
+			// Check if row adds up
+			if (rowSum != answer) {
+				return false;
+			}
+		}
+
+		// Check if diagonal adds up
+		if (diagonalSum != answer) {
+			return false;
+		}
+
+		// Check all columns add up
+		for (int column : columnSum) {
+			if (column != answer) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	public void swap(int i, int j, String dir) {
 		int newI = updatePos(i),
 			newJ = updatePos(j);

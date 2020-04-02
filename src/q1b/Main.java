@@ -39,7 +39,7 @@ public class Main {
 		int numMoves = 0;
 
 		// While user square string != originalSquare, keep playing
-		while (!square.toString().equals(originalSquare)){
+		while (!square.validSquare()){
 			String move = in.getMove("Enter a move");
 			String[] components = move.split("\\s+", 3);
 
