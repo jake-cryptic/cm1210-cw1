@@ -16,6 +16,7 @@ public class Main {
 		Input in = new Input();
 		int userSquareSize = getSquareSize(in);
 
+		// Change array to list so we can check it easily later
 		List<String> validMovesList = Arrays.asList(validMoves);
 
 		Magic square = new Magic(userSquareSize);
@@ -42,15 +43,18 @@ public class Main {
 			String move = in.getMove("Enter a move");
 			String[] components = move.split("\\s+", 3);
 
+			// Check we received 3 symbols
 			if (components.length != 3) {
 				System.out.println("Please enter an input that has the format: i j direction");
 				continue;
 			}
 
+			// Parse what was inputted
 			int i = Integer.parseInt(components[0]);
 			int j = Integer.parseInt(components[1]);
 			String dir = components[2].toUpperCase();
 
+			// Check move is valid, remember that list we defined earlier?
 			if (!validMovesList.contains(dir)) {
 				System.out.println("Valid directions include: U, D, L, R");
 				continue;
@@ -60,14 +64,17 @@ public class Main {
 
 			numMoves++;
 
+			// Remind the user what has happened
 			System.out.println("\nYou just made move number " + numMoves + ".");
 			System.out.println("Here was the square before: \n" + shuffledSquare);
 			System.out.println("Here's the current square: \n" + square.toString());
 			System.out.println("You are attempting to get it to look like: \n" + originalSquare);
 
+			// Store this to show on the next move
 			shuffledSquare = square.toString();
 		}
 
+		// They did it!
 		System.out.println("You finished in " + numMoves + " moves!");
 	}
 
@@ -75,6 +82,7 @@ public class Main {
 		int squareSize;
 		boolean isAllowed;
 
+		// Keep requesting a square size until we get a valid one
 		do {
 			squareSize = in.getInt("Please enter an odd integer");
 			isAllowed = isOddNumber(squareSize) && 0 < squareSize;

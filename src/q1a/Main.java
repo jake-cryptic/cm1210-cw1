@@ -10,8 +10,10 @@ public class Main {
 	public static void main(String[] args) {
 		int userSquareSize = getSquareSize();
 
+		// Create square class with size user specified
 		Square magic = new Square(userSquareSize);
 
+		// Generate magic square
 		int max 	= (int) Math.pow(userSquareSize, 2),
 			loopX 	= 1,
 			loopY	= ((userSquareSize + 1) / 2);
@@ -40,6 +42,7 @@ public class Main {
 		int squareSize;
 		boolean isAllowed;
 
+		// Keep requesting a square size until we get a valid one
 		do {
 			squareSize = in.getInt("Please enter an odd integer");
 			isAllowed = isOddNumber(squareSize) && 0 < squareSize;

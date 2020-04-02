@@ -12,6 +12,7 @@ public class Magic extends Square {
 	public Magic(int usize) {
 		super(usize);
 
+		// Generate magic square here
 		int max 	= (int) Math.pow(usize, 2),
 			loopX 	= 1,
 			loopY	= ((usize + 1) / 2);
@@ -32,11 +33,13 @@ public class Magic extends Square {
 		}
 	}
 
+	// Calculates what each row, col and diagonal should add to
 	public int getAnswer() {
 		int ans = size * ((size * size) + 1);
 		return ans / 2;
 	}
 
+	// Check if row, col and diagonal add to the answer.
 	public boolean validSquare() {
 		int answer = getAnswer();
 
@@ -75,14 +78,15 @@ public class Magic extends Square {
 		return true;
 	}
 
+	// Swap depending on what the user inputted
 	public void swap(int i, int j, String dir) {
 		int newI = updatePos(i),
 			newJ = updatePos(j);
 
 		// Adjust coordinates depending on direction
 		switch (dir){
-			case "U": newI++; break;
-			case "D": newI--; break;
+			case "U": newI--; break;
+			case "D": newI++; break;
 			case "L": newJ--; break;
 			case "R": newJ++; break;
 		}
@@ -99,6 +103,7 @@ public class Magic extends Square {
 		setPos(i, j, tmpNew);
 	}
 
+	// Fisher Yates shuffle
 	public void shuffle() {
 		Random rand = new Random();
 		for (int i = 0; i < size; i++) {

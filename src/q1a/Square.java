@@ -29,6 +29,7 @@ public class Square {
 		return sb.toString();
 	}
 
+	// A method for getting the position of wrapped columns and rows
 	private int getRelative(int n) {
 		int rn = n - 1;
 		if (rn < 0) {
