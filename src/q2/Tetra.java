@@ -10,8 +10,12 @@ import java.util.Date;
 
 public class Tetra extends Fish {
 
-	public Tetra(String name, Date birthday) {
-		super(name, birthday);
+	public Tetra(String name, Date birthday, String species) {
+		super(name, birthday, species);
+	}
+
+	public Tetra(String name, Date birthday, String species, float length) {
+		super(name, birthday, species, length);
 	}
 
 }

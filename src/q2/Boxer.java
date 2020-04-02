@@ -14,4 +14,8 @@ class Boxer extends Dog {
 		super(name, birthday, gender, breed);
 	}
 
+	public Boxer(String name, Date birthday, String gender, String breed, float height) {
+		super(name, birthday, gender, breed, height);
+	}
+
 }

@@ -43,4 +43,12 @@ public abstract class Pet {
 		this.weight = weight;
 	}
 
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public abstract void sleep();
+
+	public abstract void eat();
+
 }
