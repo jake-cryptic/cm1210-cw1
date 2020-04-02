@@ -41,7 +41,7 @@ public class Fish extends Pet {
 	}
 
 	public void eat() {
-		System.out.println("Nom nom nom");
+		System.out.println("Om nom nom");
 	}
 
 	public void sleep() {
