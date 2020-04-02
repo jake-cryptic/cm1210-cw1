@@ -4,7 +4,6 @@
  *	Name: Jake Mcneill
  *	Student Number: c1931370
  */
-package q1b;
 
 import java.util.Scanner;
 
@@ -27,6 +26,7 @@ public class Input {
 		try {
 			if (sc.hasNextInt()) {
 				uin = sc.nextInt();
+				sc.nextLine();
 			} else {
 				System.out.println("That was not a valid input.");
 				sc.next();

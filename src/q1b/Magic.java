@@ -4,7 +4,6 @@
  *	Name: Jake Mcneill
  *	Student Number: c1931370
  */
-package q1b;
 
 import java.util.Random;
 
