@@ -6,8 +6,12 @@
  */
 package q2;
 
+import java.util.Date;
+
 class Boxer extends Dog {
-	
-	
+
+	public Boxer(String name, Date birthday, String gender, String breed) {
+		super(name, birthday, gender, breed);
+	}
 
 }

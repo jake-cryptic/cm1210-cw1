@@ -10,8 +10,8 @@ import java.util.Date;
 
 public class SpringerSpaniel extends Dog {
 
-	public SpringerSpaniel(String name, Date birthday) {
-		super(name, birthday);
+	public SpringerSpaniel(String name, Date birthday, String gender, String breed) {
+		super(name, birthday, gender, breed);
 	}
 
 }

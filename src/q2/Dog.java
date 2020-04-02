@@ -13,8 +13,18 @@ public class Dog extends Pet {
 	private String breed;
 	private String gender;
 
-	public Dog(String name, Date birthday) {
+	public Dog(String name, Date birthday, String gender, String breed) {
 		super(name, birthday);
+		this.gender = gender;
+		this.breed = breed;
+	}
+
+	public String getBreed() {
+		return breed;
+	}
+
+	public String getGender() {
+		return gender;
 	}
 
 }
