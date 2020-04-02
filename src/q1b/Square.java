@@ -9,7 +9,7 @@ package q1b;
 public class Square {
 
 	protected int[][] data;
-	private int size;
+	protected int size;
 
 	public Square(int usize){
 		size = usize;
@@ -20,11 +20,13 @@ public class Square {
 		StringBuilder sb = new StringBuilder();
 
 		for (int[] row : data) {
-			sb.append("\n\t/\t");
+			sb.append("\t|\t");
 
 			for (int item : row) {
-				sb.append(item + "\t/\t");
+				sb.append(item).append("\t|\t");
 			}
+
+			sb.append("\n");
 		}
 
 		return sb.toString();

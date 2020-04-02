@@ -19,6 +19,12 @@ public abstract class Pet {
 		this.birthday = birthday;
 	}
 
+	public Pet(String name, Date birthday, float weight) {
+		this.name = name;
+		this.birthday = birthday;
+		this.weight = weight;
+	}
+
 	public String toString() {
 		return "Pet:" + name;
 	}
@@ -39,12 +45,12 @@ public abstract class Pet {
 		this.name = name;
 	}
 
-	public void setWeight(float weight) {
-		this.weight = weight;
-	}
-
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
+	}
+
+	public void setWeight(float weight) {
+		this.weight = weight;
 	}
 
 	public abstract void sleep();

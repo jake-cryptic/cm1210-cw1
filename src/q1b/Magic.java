@@ -59,14 +59,14 @@ public class Magic extends Square {
 
 	public void shuffle() {
 		Random rand = new Random();
-		for (int i = data.length - 1; i > 0; i--) {
-			for (int j = data[i].length - 1; j > 0; j--) {
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
 				int m = rand.nextInt(i + 1);
 				int n = rand.nextInt(j + 1);
 
-				int temp = data[i][j];
+				int swap = data[i][j];
 				data[i][j] = data[m][n];
-				data[m][n] = temp;
+				data[m][n] = swap;
 			}
 		}
 	}
